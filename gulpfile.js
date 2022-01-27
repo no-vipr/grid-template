@@ -40,7 +40,7 @@ function scss() {
 function scssDev() {
   return src(PATH.scssFile, {sourcemaps: true}).
     pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)).
-    pipe(postcss(PLUGINS)).
+    pipe(postcss([mqpacker({sort: sortCSSmq})])).
     pipe(dest(PATH.cssFolder, {sourcemaps: true})).
     pipe(browserSync.stream());
 }
@@ -67,10 +67,16 @@ function watchFiles() {
   watch(PATH.scssFiles, series(scss));
   watch(PATH.htmlFiles, sync);
   watch(PATH.jsFiles, sync);
-  watch(PATH.cssFiles, sync);
+}
+
+function watchFilesInDevMode() {
+  syncInit();
+  watch(PATH.scssFiles, series(scssDev));
+  watch(PATH.htmlFiles, sync);
+  watch(PATH.jsFiles, sync);
 }
 
 task('comb', series(comb));
 task('scss', series(scss));
-task('dev', series(scssDev));
+task('watchDev', series(watchFilesInDevMode));
 task('watch', watchFiles);
