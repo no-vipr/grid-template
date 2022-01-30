@@ -10,28 +10,8 @@
 html {
   overflow-y: scroll;
 
-  letter-spacing: 0.1em;
-
   font-family: $font-main;
   font-size: $font-size;
-}
-
-@mixin lg-min {
-  @media (min-width: $lg) {
-    @content;
-  }
-}
-
-@mixin lg-md {
-  @media (max-width: $lg - 0.2) and (min-width: $md) {
-    @content;
-  }
-}
-
-@mixin md {
-  @media (max-width: $md - 0.2) {
-    @content;
-  }
 }
 
 h1 {
@@ -42,7 +22,7 @@ h1 {
 
   font-family: $font-header;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.2em;
 
   @include lg-min {
     font-size: 3.75rem;
@@ -52,6 +32,44 @@ h1 {
   }
   @include md {
     font-size: 1.875rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  color: $color-primary;
+  font-weight: 700;
+  font-family: $font-header;
+
+  @include lg-min {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+  @include lg-md {
+    margin-bottom: 2.625rem;
+    font-size: 2rem;
+  }
+  @include md-sm {
+    margin-bottom: 2.25rem;
+    font-size: 1.5rem;
+  }
+  @include sm {
+    margin-bottom: 2.25rem;
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  line-height: 1.15em;
+  letter-spacing: 0.055em;
+  color: $color-gray;
+  font-weight: 400;
+  font-family: $font-main;
+
+  @include lg-min {
+    font-size: 1.125rem;
   }
 }
 
