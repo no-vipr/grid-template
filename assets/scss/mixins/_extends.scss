@@ -4,7 +4,7 @@
 
 %container {
   max-width: $ul;
-  margin: 0 auto;
+  margin: auto;
   padding-right: $gap;
   padding-left: $gap;
 }
@@ -25,5 +25,21 @@
 
   h2 {
     margin-top: 0;
+  }
+}
+
+%btn-container {
+  @include sm-min {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn--primary {
+    @include sm-min {
+      min-width: 350px;
+    }
+    @include sm {
+      width: 100%;
+    }
   }
 }
