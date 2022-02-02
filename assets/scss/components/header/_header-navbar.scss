@@ -112,11 +112,12 @@
   &__list {
     @include md-min {
       display: grid;
-      justify-content: end;
+      justify-content: flex-end;
+      width: 100%;
 
       gap: $gap;
-      grid-template-columns: repeat(auto-fit, minmax(2em, max-content));
-      @include unlist(0 -10px 0);
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      @include unlist(0 -10px 0 0);
     }
     @include md {
       position: absolute;
