@@ -494,6 +494,10 @@ a {
   display: block;
   padding: 20px 20px 20px 0;
 }
+
+.header-navbar {
+  letter-spacing: 0.1em;
+}
 .header-navbar__btn {
   position: relative;
   width: 30px;
