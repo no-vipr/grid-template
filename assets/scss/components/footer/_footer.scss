@@ -16,6 +16,7 @@
     position: relative;
     display: grid;
     justify-content: center;
+
     margin-bottom: $gap-x2;
 
     grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
@@ -28,14 +29,17 @@
       width: 75px;
       height: 2px;
 
-      background-color: rgba($color-light, 0.1);
-
       content: "";
+
+      background-color: rgba($color-light, 0.1);
     }
 
     a {
       display: block;
+
       padding: 10px;
+
+      transition: color 0.5s;
       background-color: transparent;
 
       &:hover,
@@ -52,15 +56,20 @@
   &__copy {
     span {
       &:nth-of-type(1) {
-        margin-right: -8px;
+        margin-right: -0.5em;
+
         letter-spacing: 0.33em;
+
         color: $color-gray;
+
         font-weight: 100;
       }
 
       &:nth-of-type(2) {
         letter-spacing: 0.05em;
+
         color: $color-gray-light;
+
         font-weight: 700;
       }
     }

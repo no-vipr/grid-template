@@ -392,13 +392,12 @@ h2 {
 h3 {
   letter-spacing: 0.05em;
   color: #637588;
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
 }
 
 p {
-  letter-spacing: 0.049em;
   color: #637588;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -447,7 +446,7 @@ a {
   -ms-flex-line-pack: center;
       align-content: center;
   min-height: 100vh;
-  padding: 150px 0;
+  padding: 100px 0;
   background-color: #2d3651;
   background-image: url(../img/img-header.png);
   background-position: 50% 50%;
@@ -455,28 +454,24 @@ a {
 }
 
 .header-overlay {
+  opacity: 0.8;
+  background-color: #2d3651;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.8;
-  background-color: #2d3651;
 }
 
 .header-menu {
   position: absolute;
   z-index: 2;
   top: 0;
-  right: 0;
   left: 0;
+  width: 100%;
 }
 .header-menu__container {
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 20px;
   grid-template-columns: auto 1fr;
 }
 
@@ -497,6 +492,11 @@ a {
 
 .header-navbar {
   letter-spacing: 0.1em;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: end;
 }
 .header-navbar__btn {
   position: relative;
@@ -590,6 +590,12 @@ a {
 .header-content {
   position: relative;
   z-index: 1;
+}
+.header-content__container {
+  display: grid;
+}
+.header-content__title {
+  text-align: center;
 }
 .header-content__actions {
   display: -webkit-box;
@@ -914,12 +920,15 @@ a {
   left: calc(50% - 37.5px);
   width: 75px;
   height: 2px;
-  background-color: rgba(255, 255, 255, 0.1);
   content: "";
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .footer__social a {
   display: block;
   padding: 10px;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
   background-color: transparent;
 }
 .footer__social a:hover, .footer__social a:focus {
@@ -929,7 +938,7 @@ a {
   font-size: 36px;
 }
 .footer__copy span:nth-of-type(1) {
-  margin-right: -8px;
+  margin-right: -0.5em;
   letter-spacing: 0.33em;
   color: #637588;
   font-weight: 100;
@@ -1088,21 +1097,13 @@ a {
     -webkit-box-shadow: -3px 3px 20px -10px black;
             box-shadow: -3px 3px 20px -10px black;
   }
-  .header-navbar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
   .header-navbar__list {
     position: absolute;
     top: 100%;
     right: 20px;
     display: none;
     text-align: right;
-    background-color: rgba(68, 89, 110, 0.95);
+    background-color: rgba(68, 89, 110, 0.9);
     margin: 0;
     padding: 0;
     list-style: none;

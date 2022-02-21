@@ -4,10 +4,9 @@
 .header-navbar {
   letter-spacing: 0.1em;
 
-  @include md {
-    display: flex;
-    justify-content: flex-end;
-  }
+  display: grid;
+  align-items: center;
+  justify-items: end;
 
   &__btn {
     position: relative;
@@ -130,7 +129,7 @@
 
       text-align: right;
 
-      background-color: rgba($color-gray-dark, 0.95);
+      background-color: rgba($color-gray-dark, 0.9);
 
       @include unlist;
       @include box-shadow;
